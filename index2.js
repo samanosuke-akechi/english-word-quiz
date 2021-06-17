@@ -151,7 +151,7 @@ quiz = shuffle(quiz)
 
 // 問題文・選択肢の書き換えをするコード
 const setupQuiz = () =>{
-  document.getElementById("js-question").textContent = quiz[quizIndex].question;
+  document.getElementById("js-question").textContent = `${quizIndex + 1}．${quiz[quizIndex].question}`;
 
   let buttonIndex = 0;
   while(buttonIndex < buttonLength){
