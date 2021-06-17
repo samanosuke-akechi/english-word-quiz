@@ -1,4 +1,4 @@
-const quiz = [
+let quiz = [
   {
     question:"次の日本語の正しい英語訳はどれか。 竹馬",
     answers:[
@@ -138,6 +138,16 @@ const buttonLength = $button.length - 1;
 let quizIndex = 0;
 const quizLength = quiz.length;
 let score = 0;
+
+// 問題の順番をシャッフル
+const shuffle = (quiz) => {
+  for (let i = quiz.length -1; i >= 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [quiz[i], quiz[j]] = [quiz[j], quiz[i]];
+  }
+  return quiz
+}
+quiz = shuffle(quiz)
 
 // 問題文・選択肢の書き換えをするコード
 const setupQuiz = () =>{
