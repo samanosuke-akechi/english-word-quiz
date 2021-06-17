@@ -198,5 +198,6 @@ $button[buttonLength].addEventListener("click", () => {
 const restart = () => {
     quizIndex = 0;
     score = 0;
+    quiz = shuffle(quiz)
     setupQuiz();
 };
